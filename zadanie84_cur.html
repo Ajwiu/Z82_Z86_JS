@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Zadanie 84 Kamil Cur </title>
+</head>
+<body>
+
+<script>
+dzis_cur = new Date();
+document.write("Aktualny czas : ",dzis_cur.getHours(),":",dzis_cur.getMinutes());
+</script>
+<div style="border:2px black solid;width: 10%;">
+<p id="czas_stopera">0.000</p>
+</div>
+<input type="button" name="Button1" value="START stoper" onclick="Stoper_Start_cur()">
+<input type="button" name="Button1" value="STOP stoper" onclick="Stoper_Stop_cur()">
+<script>
+var czas = 0;
+function Stoper_Start_cur() 
+{
+    var czas_stopera = document.getElementById("czas_stopera");
+    start_cur = new Date();
+    poczatek_cur = start_cur.getTime()
+}
+function Stoper_Stop_cur() 
+{
+    stop_cur = new Date();
+    koniec_cur = stop_cur.getTime()
+    roznica_cur = koniec_cur - poczatek_cur;
+    czas_stopera.innerHTML = roznica_cur/1000+" s";
+} 
+
+</script>
+</body>
+</html>
